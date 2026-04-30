@@ -379,6 +379,82 @@
     .edu-degree { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
     .edu-year { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
 
+    /* ── CURRENTLY WORKING ON ── */
+    .now-strip {
+      background: var(--blue-600);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.75rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: fadeUp 0.5s ease both;
+    }
+    .now-pulse {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #7dd3fc;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .now-pulse::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(125,211,252,0.4);
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0; }
+    }
+    .now-label {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-100);
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+    .now-text { font-size: 14px; color: #ffffff; line-height: 1.6; }
+
+    /* ── CERT ROADMAP ── */
+    .roadmap { display: flex; align-items: flex-start; gap: 0; margin-top: 0.25rem; }
+    .rm-step {
+      flex: 1; display: flex; flex-direction: column; align-items: center; position: relative;
+    }
+    .rm-step:not(:last-child)::after {
+      content: ''; position: absolute; top: 15px; left: 50%; width: 100%;
+      height: 1.5px; background: var(--border-mid); z-index: 0;
+    }
+    .rm-step.done:not(:last-child)::after { background: var(--blue-400); }
+    .rm-dot {
+      width: 30px; height: 30px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1; flex-shrink: 0;
+    }
+    .rm-step.done .rm-dot { background: var(--blue-600); }
+    .rm-step.next .rm-dot { background: var(--amber-50); border: 1.5px solid #EF9F27; }
+    .rm-step.future .rm-dot { background: var(--surface-2); border: 1.5px solid var(--border-mid); }
+    .rm-title {
+      font-size: 11px; font-weight: 500; color: var(--text-primary);
+      margin-top: 8px; text-align: center; line-height: 1.3;
+    }
+    .rm-step.future .rm-title { color: var(--text-muted); }
+    .rm-date { font-size: 10px; color: var(--text-muted); margin-top: 3px; text-align: center; }
+    .rm-step.next .rm-date { color: var(--amber-600); font-weight: 500; }
+
+    /* ── DOWNLOAD BUTTON ── */
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 1.5rem; font-size: 13px; font-family: 'DM Sans', sans-serif;
+      padding: 9px 18px; border-radius: var(--radius-md);
+      background: var(--blue-600); color: #ffffff; text-decoration: none;
+      font-weight: 500; border: none; cursor: pointer; transition: background 0.15s;
+    }
+    .dl-btn:hover { background: var(--blue-800); }
+
     /* ── ANIMATION ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(12px); }
@@ -425,6 +501,15 @@
         <a class="ci" href="tel:7408174342"><div class="cdot"></div>740-817-4342</a>
         <a class="ci" href="https://linkedin.com/in/christopher-brooks-93a774123" target="_blank"><div class="cdot"></div>LinkedIn</a>
         <span class="ci"><div class="cdot"></div>Chardon, OH · Remote</span>
+      </div>
+    </div>
+
+    <!-- CURRENTLY WORKING ON -->
+    <div class="now-strip">
+      <div class="now-pulse"></div>
+      <div>
+        <div class="now-label">Currently working on</div>
+        <div class="now-text">Leading IAM governance for an enterprise data platform migration — overseeing access controls, PAM enforcement, and data quality rules for sensitive risk data to ensure permissions are validated and compliant throughout the transition.</div>
       </div>
     </div>
 
@@ -557,8 +642,8 @@
 
     <!-- CERTIFICATIONS -->
     <div class="section">
-      <div class="slabel">Certifications</div>
-      <div class="cert-row">
+      <div class="slabel">Certifications &amp; roadmap</div>
+      <div class="cert-row" style="margin-bottom: 1.75rem;">
         <div class="cert-card">
           <div class="cert-icon">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -567,9 +652,41 @@
             </svg>
           </div>
           <div>
-            <div class="cert-name">CompTIA Security+ <span class="prog-badge">02/26</span></div>
-            <div class="cert-sub">CompTIA</div>
+            <div class="cert-name">CompTIA Security+</div>
+            <div class="cert-sub">CompTIA · Earned Feb 2025</div>
           </div>
+        </div>
+      </div>
+
+      <div class="slabel" style="margin-bottom: 1.25rem;">Certification roadmap</div>
+      <div class="roadmap">
+        <div class="rm-step done">
+          <div class="rm-dot">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7l3 3 5-5" stroke="#E6F1FB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="rm-title">CompTIA Security+</div>
+          <div class="rm-date">Feb 2025</div>
+        </div>
+        <div class="rm-step next">
+          <div class="rm-dot">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2.5" fill="#854F0B"/></svg>
+          </div>
+          <div class="rm-title">Microsoft SC-300</div>
+          <div class="rm-date">In progress</div>
+        </div>
+        <div class="rm-step future">
+          <div class="rm-dot">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2.5" fill="#B4B2A9"/></svg>
+          </div>
+          <div class="rm-title">CyberArk Defender</div>
+          <div class="rm-date">Planned</div>
+        </div>
+        <div class="rm-step future">
+          <div class="rm-dot">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="2.5" fill="#B4B2A9"/></svg>
+          </div>
+          <div class="rm-title">CISSP</div>
+          <div class="rm-date">Planned</div>
         </div>
       </div>
     </div>
@@ -594,5 +711,13 @@
     </div>
 
   </div>
+
+  <div style="max-width:740px; margin: 0 auto; padding-bottom: 1rem;">
+    <a class="dl-btn" href="resume.pdf" download>
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2v7.5M4.5 7l3 3 3-3M2.5 11.5v1a1 1 0 001 1h8a1 1 0 001-1v-1" stroke="#ffffff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Download Resume (PDF)
+    </a>
+  </div>
+
 </body>
 </html>
