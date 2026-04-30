@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christopher Brooks – Senior IAM Engineer & Product Owner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue-900: #042C53;
+      --blue-800: #0C447C;
+      --blue-600: #185FA5;
+      --blue-400: #378ADD;
+      --blue-200: #85B7EB;
+      --blue-100: #B5D4F4;
+      --blue-50:  #E6F1FB;
+      --amber-50: #FAEEDA;
+      --amber-600: #854F0B;
+      --gray-50:  #F1EFE8;
+      --gray-100: #D3D1C7;
+      --gray-200: #B4B2A9;
+      --gray-400: #888780;
+      --gray-600: #5F5E5A;
+      --gray-800: #444441;
+      --gray-900: #2C2C2A;
+      --text-primary: #1a1a18;
+      --text-secondary: #5a5a56;
+      --text-muted: #8a8a84;
+      --border: rgba(0,0,0,0.10);
+      --border-mid: rgba(0,0,0,0.16);
+      --surface: #ffffff;
+      --surface-2: #f7f6f2;
+      --bg: #f0efe9;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding: 2.5rem 1rem 4rem;
+    }
+
+    .page {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2.25rem 1.75rem;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--blue-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      color: var(--blue-100);
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+      overflow: hidden;
+      border: 2px solid var(--border-mid);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 30px;
+      color: var(--text-primary);
+      line-height: 1.15;
+    }
+
+    .hero-title {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 5px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 3px 11px;
+      border-radius: 20px;
+      background: var(--blue-50);
+      color: var(--blue-600);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-summary {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      border-top: 0.5px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 0.5px solid var(--border);
+    }
+
+    .ci {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .ci:hover { color: var(--blue-600); }
+
+    .cdot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--blue-400);
+      flex-shrink: 0;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .section:nth-child(2) { animation-delay: 0.05s; }
+    .section:nth-child(3) { animation-delay: 0.10s; }
+    .section:nth-child(4) { animation-delay: 0.15s; }
+    .section:nth-child(5) { animation-delay: 0.20s; }
+    .section:nth-child(6) { animation-delay: 0.25s; }
+
+    .slabel {
+      font-size: 10px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 1.1rem;
+    }
+
+    /* ── METRICS ── */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .mc {
+      background: var(--surface-2);
+      border-radius: var(--radius-md);
+      padding: 1rem 1rem 0.9rem;
+    }
+
+    .mn {
+      font-family: 'DM Serif Display', serif;
+      font-size: 30px;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .ml {
+      font-size: 11px;
+      color: var(--text-secondary);
+      margin-top: 6px;
+      line-height: 1.45;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-item {
+      padding: 1rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .exp-item:first-child { padding-top: 0; }
+    .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .exp-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .exp-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .exp-date {
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .exp-co {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 3px;
+    }
+
+    .exp-co .badge {
+      display: inline-block;
+      margin-left: 7px;
+      padding: 1px 8px;
+      border-radius: 10px;
+      background: var(--blue-50);
+      color: var(--blue-600);
+      font-size: 10px;
+      font-weight: 500;
+    }
+
+    ul.eb {
+      margin-top: 9px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    ul.eb li {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      padding: 2px 0 2px 15px;
+      position: relative;
+    }
+
+    ul.eb li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--blue-400);
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .sgt {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .stags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .stag {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: var(--surface-2);
+      border: 0.5px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    /* ── CERTS ── */
+    .cert-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .cert-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.7rem 1.1rem;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface-2);
+    }
+
+    .cert-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+      background: var(--blue-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cert-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .cert-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .prog-badge {
+      display: inline-block;
+      font-size: 10px;
+      padding: 1px 7px;
+      border-radius: 10px;
+      background: var(--amber-50);
+      color: var(--amber-600);
+      font-weight: 500;
+      margin-left: 7px;
+      vertical-align: middle;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.65rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .edu-row:first-child { padding-top: 0; }
+    .edu-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .edu-school { font-size: 13.5px; font-weight: 500; color: var(--text-primary); }
+    .edu-degree { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+    .edu-year { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+
+    /* ── ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 560px) {
+      body { padding: 1.25rem 0.75rem 3rem; }
+      .hero { padding: 1.5rem 1.25rem 1.25rem; }
+      .section { padding: 1.25rem; }
+      .metric-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero-name { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-top">
+        <div class="avatar"><img src="photo.jpg" alt="Christopher Brooks" /></div>
+        <div style="flex:1;">
+          <div class="hero-name">Christopher Brooks</div>
+          <div class="hero-title">Senior IAM Engineer &amp; Product Owner · Identity Governance Specialist</div>
+          <div class="tag-row">
+            <span class="tag">IAM Strategy</span>
+            <span class="tag">PAM / PIM</span>
+            <span class="tag">Microsoft Entra ID</span>
+            <span class="tag">SailPoint</span>
+            <span class="tag">Zero Trust</span>
+            <span class="tag">SOX Compliance</span>
+            <span class="tag">Agile PO</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-summary">
+        Identity and Access Management professional with 15+ years of experience spanning IT administration, data governance, and IAM product ownership at enterprise scale. Proven track record maturing IAM programs at organizations including JP Morgan and Netwrix — automating identity lifecycle workflows, reducing compliance risk, and delivering access governance products adopted by 20+ enterprise customers. Adept at bridging technical implementation and business stakeholder needs across hybrid cloud and on-premises environments.
+      </div>
+      <div class="contact-row">
+        <a class="ci" href="mailto:CB.ChrisBrooks7@gmail.com"><div class="cdot"></div>CB.ChrisBrooks7@gmail.com</a>
+        <a class="ci" href="tel:7408174342"><div class="cdot"></div>740-817-4342</a>
+        <a class="ci" href="https://linkedin.com/in/christopher-brooks-93a774123" target="_blank"><div class="cdot"></div>LinkedIn</a>
+        <span class="ci"><div class="cdot"></div>Chardon, OH · Remote</span>
+      </div>
+    </div>
+
+    <!-- METRICS -->
+    <div class="section">
+      <div class="slabel">Impact at a glance</div>
+      <div class="metric-grid">
+        <div class="mc"><div class="mn">15+</div><div class="ml">Years in IAM &amp; IT administration</div></div>
+        <div class="mc"><div class="mn">40%</div><div class="ml">Improvement in access audit readiness</div></div>
+        <div class="mc"><div class="mn">50%</div><div class="ml">Reduction in manual governance reporting</div></div>
+        <div class="mc"><div class="mn">35%</div><div class="ml">Avg reduction in overprovisioned accounts</div></div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="slabel">Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <div class="exp-title">Senior Product Manager – IAM &amp; Data Governance</div>
+          <div class="exp-date">Oct 2025 – Present</div>
+        </div>
+        <div class="exp-co">JP Morgan <span class="badge">Current</span></div>
+        <ul class="eb">
+          <li>Built real-time dashboards tracking provisioning health, access anomalies, and lifecycle completion rates — metrics framework adopted across 3 product lines, improving audit readiness by ~40%</li>
+          <li>Translated compliance requirements into automated access certification workflows, reducing manual access review effort by ~30% and strengthening SOX audit trail completeness</li>
+          <li>Conducted gap analysis and competitive benchmarking to align cross-functional roadmap across engineering, compliance, and leadership — accelerating 2 high-priority security features to production</li>
+          <li>Leveraged SQL analytics to surface provisioning delays and orphaned account patterns, informing 4 product decisions and improving user access accuracy</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <div class="exp-title">Product Owner / Manager – Governance &amp; Reporting</div>
+          <div class="exp-date">Mar 2020 – Aug 2025</div>
+        </div>
+        <div class="exp-co">Netwrix Corporation</div>
+        <ul class="eb">
+          <li>Owned full product backlog and roadmap for governance and reporting; delivered automated governance reporting product reducing manual cycles by 50%+ for enterprise customers</li>
+          <li>Defined HRIS integration requirements for joiner/mover/leaver automation, enabling fully automated onboarding and offboarding across multiple enterprise accounts</li>
+          <li>Shipped RBAC enforcement and access certification features aligned to SOX — helped customers reduce overprovisioned accounts by an average of 35%</li>
+          <li>Drove SAML, OAuth, and OpenID Connect SSO integration features adopted by 20+ enterprise customers, reducing authentication friction and improving security posture</li>
+          <li>Launched access audit reporting module that became a top-cited feature in customer renewal conversations</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <div class="exp-title">Technical Support Specialist – IAM Platforms</div>
+          <div class="exp-date">May 2018 – Mar 2020</div>
+        </div>
+        <div class="exp-co">Netwrix Corporation</div>
+        <ul class="eb">
+          <li>Resolved escalated IAM configuration and SaaS integration issues; tested Azure and AWS instances and escalated critical defects with detailed reproduction steps</li>
+          <li>Developed internal documentation for common IAM configuration patterns, reducing average resolution time for repeat issues and building team knowledge base</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <div class="exp-title">IT Administrator</div>
+          <div class="exp-date">Mar 2017 – May 2018</div>
+        </div>
+        <div class="exp-co">York Risk Services</div>
+        <ul class="eb">
+          <li>Built operational dashboards and managed secure data pipelines between legacy systems and BI platforms — delivered compliance updates ahead of schedule</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <div class="exp-title">Business Analyst / Communications Specialist</div>
+          <div class="exp-date">2010 – 2017</div>
+        </div>
+        <div class="exp-co">Ascena Retail Group · Nokia</div>
+        <ul class="eb">
+          <li>Built reporting tools for user activity, compliance tracking, and project performance monitoring across multiple business units and executive audiences</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <div class="slabel">Technical skills</div>
+      <div class="skills-grid">
+        <div>
+          <div class="sgt">Identity platforms</div>
+          <div class="stags">
+            <span class="stag">Microsoft Entra ID</span>
+            <span class="stag">Azure AD</span>
+            <span class="stag">Active Directory</span>
+            <span class="stag">SailPoint</span>
+            <span class="stag">Okta</span>
+          </div>
+        </div>
+        <div>
+          <div class="sgt">Access &amp; federation</div>
+          <div class="stags">
+            <span class="stag">SSO / MFA</span>
+            <span class="stag">SAML</span>
+            <span class="stag">OAuth</span>
+            <span class="stag">OpenID Connect</span>
+            <span class="stag">LDAP</span>
+            <span class="stag">Conditional Access</span>
+          </div>
+        </div>
+        <div style="margin-top:12px;">
+          <div class="sgt">Governance &amp; compliance</div>
+          <div class="stags">
+            <span class="stag">RBAC</span>
+            <span class="stag">PAM / PIM</span>
+            <span class="stag">SOX</span>
+            <span class="stag">Access Certification</span>
+            <span class="stag">Lifecycle (JML)</span>
+          </div>
+        </div>
+        <div style="margin-top:12px;">
+          <div class="sgt">Product &amp; delivery</div>
+          <div class="stags">
+            <span class="stag">Agile / Scrum / Kanban</span>
+            <span class="stag">ServiceNow</span>
+            <span class="stag">FreshService</span>
+            <span class="stag">SQL</span>
+            <span class="stag">PowerShell</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section">
+      <div class="slabel">Certifications</div>
+      <div class="cert-row">
+        <div class="cert-card">
+          <div class="cert-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <rect x="2" y="2" width="12" height="12" rx="3" fill="#185FA5"/>
+              <path d="M5 8l2 2 4-4" stroke="#E6F1FB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cert-name">CompTIA Security+ <span class="prog-badge">In Progress</span></div>
+            <div class="cert-sub">CompTIA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="slabel">Education</div>
+      <div class="edu-row">
+        <div>
+          <div class="edu-school">The Ohio State University</div>
+          <div class="edu-degree">Computer Information Technology</div>
+        </div>
+        <div class="edu-year">2008 – 2010</div>
+      </div>
+      <div class="edu-row">
+        <div>
+          <div class="edu-school">Penn Foster</div>
+          <div class="edu-degree">Computer Programming, Networking &amp; Computer Science</div>
+        </div>
+        <div class="edu-year">2016</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
